@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Monitor Gamer Acer Predator 27",
+    "category": "Periféricos",
+    "price": 2899.99,
+    "stock": 15
+  },
+  {
+    "name": "Teclado Mecânico Razer BlackWidow",
+    "category": "Periféricos",
+    "price": 799.99,
+    "stock": 50
+  },
+  {
+    "name": "Mouse Gamer Logitech G502",
+    "category": "Periféricos",
+    "price": 299.99,
+    "stock": 120
+  },
+  {
+    "name": "Headset Gamer HyperX Cloud II",
+    "category": "Áudio",
+    "price": 599.99,
+    "stock": 40
+  },
+  {
+    "name": "Cadeira Gamer DXRacer Formula Series",
+    "category": "Móveis",
+    "price": 1699.99,
+    "stock": 25
+  },
+  {
+    "name": "Controle Xbox Elite Series 2",
+    "category": "Periféricos",
+    "price": 1099.99,
+    "stock": 60
+  },
+  {
+    "name": "Laptop Gamer ASUS ROG Strix G15",
+    "category": "Informática",
+    "price": 12999.99,
+    "stock": 20
+  },
+  {
+    "name": "Gamepad Logitech F310",
+    "category": "Periféricos",
+    "price": 199.99,
+    "stock": 150
+  },
+  {
+    "name": "Cadeira Gamer Secretlab Titan",
+    "category": "Móveis",
+    "price": 3999.99,
+    "stock": 10
+  },
+  {
+    "name": "Placa de Vídeo NVIDIA GeForce RTX 3080",
+    "category": "Informática",
+    "price": 7999.99,
+    "stock": 30
+  },
+  {
+    "name": "Smartphone Galaxy S23",
+    "category": "Eletrônicos",
+    "price": 4999.99,
+    "stock": 50
+  },
+  {
+    "name": "Notebook Dell XPS 15",
+    "category": "Informática",
+    "price": 10999.99,
+    "stock": 30
+  },
+  {
+    "name": "Fone de Ouvido Bluetooth Sony",
+    "category": "Áudio",
+    "price": 899.99,
+    "stock": 100
+  },
+  {
+    "name": "Cadeira Gamer RGB",
+    "category": "Móveis",
+    "price": 1299.99,
+    "stock": 20
+  },
+  {
+    "name": "Teclado Mecânico Redragon",
+    "category": "Periféricos",
+    "price": 349.99,
+    "stock": 80
+  },
+  {
+    "name": "Tênis Nike Air Max",
+    "category": "Moda",
+    "price": 599.99,
+    "stock": 200
+  },
+  {
+    "name": "Geladeira Frost Free Brastemp",
+    "category": "Eletrodomésticos",
+    "price": 3499.99,
+    "stock": 15
+  },
+  {
+    "name": "Livro Clean Code - Robert C. Martin",
+    "category": "Livros",
+    "price": 89.90,
+    "stock": 500
+  },
+  {
+    "name": "Relógio Smartwatch Apple Watch",
+    "category": "Acessórios",
+    "price": 3999.99,
+    "stock": 40
+  },
+  {
+    "name": "Console PlayStation 5",
+    "category": "Games",
+    "price": 4599.99,
+    "stock": 25
+  }
+]
