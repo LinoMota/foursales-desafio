@@ -3,6 +3,9 @@ package com.foursales.desafio.infra.database.repositories;
 import com.foursales.desafio.domain.entities.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import java.util.List;
 
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
@@ -15,5 +18,16 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
                   AND YEAR(o.createdAt) = YEAR(CURRENT_DATE)
             """)
     Double findTotalRevenueForCurrentMonth();
+
+    @Query("""
+            SELECT o
+            FROM Order o
+            JOIN o.items oi
+            WHERE oi.product.id = :productId
+        """)
+    List<Order> findOrdersByProductId(@Param("productId") Long productId);
+
+
+    List<Order> findOrdersByUserId(Long userId);
 
 }

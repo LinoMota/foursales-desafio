@@ -13,7 +13,7 @@ for USERNAME in "${USERS[@]}"; do
 
     echo "Token obtido para $USERNAME: $TOKEN"
 
-    ITEMS=$(shuf -i 1-10 -n 3 | awk '{print "{\"productId\":" $1 ", \"quantity\":" int(rand()*10)+1 "}"}' | jq -s '.')
+    ITEMS=$(shuf -i 1-50 -n 3 | awk '{print "{\"productId\":" $1 ", \"quantity\":" int(rand()*10)+1 "}"}' | jq -s '.')
 
     ORDER_JSON=$(jq -n --argjson items "$ITEMS" '{items: $items}')
 

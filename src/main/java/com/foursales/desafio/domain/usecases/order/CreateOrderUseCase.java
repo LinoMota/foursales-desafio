@@ -20,6 +20,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
 
@@ -48,16 +49,22 @@ public class CreateOrderUseCase {
         order.setUser(user);
 
         AtomicBoolean isValid = new AtomicBoolean(true);
+        AtomicReference<BigDecimal> finalPrice = new AtomicReference<>(BigDecimal.ZERO);
 
         List<OrderItem> orderItems = createOrderDTO.items().stream().map(itemDTO -> {
             Product product = productRepository.findById(itemDTO.productId())
                     .orElseThrow(() -> new EntityNotFoundException("Product not found: " + itemDTO.productId()));
 
+            BigDecimal price = product.getPrice().multiply(new BigDecimal(itemDTO.quantity()));
+
             OrderItem orderItem = new OrderItem();
             orderItem.setOrder(order);
             orderItem.setProduct(product);
             orderItem.setQuantity(itemDTO.quantity());
-            orderItem.setPrice(product.getPrice().multiply(BigDecimal.valueOf(itemDTO.quantity())));
+            orderItem.setPrice(price);
+
+            finalPrice.set(finalPrice.get().add(price));
+
 
             if (orderItem.getQuantity() > product.getStock()) {
                 isValid.set(false);
@@ -70,12 +77,14 @@ public class CreateOrderUseCase {
 
         order.setItems(orderItems);
         order.setCreatedAt(LocalDateTime.now());
+        order.setFinalPrice(finalPrice.get());
 
         Order savedOrder = orderRepository.save(order);
 
-        orderEventPublisher.publishOrderCreated(
-                savedOrder.getId()
-        );
+        if (isValid.get())
+            orderEventPublisher.publishOrderCreated(
+                    savedOrder.getId()
+            );
 
         return new CreateOrderResponseDTO(savedOrder);
     }

@@ -19,7 +19,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"items\": [\n    {\n        \"productId\": 2,\n        \"quantity\": 1\n    },\n    {\n        \"productId\": 11,\n        \"quantity\": 1\n        }\n    ]\n}",
+									"raw": "{\n    \"items\": [\n    {\n        \"productId\": 1,\n        \"quantity\": 1\n        }\n    ]\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -105,6 +105,23 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "MyOrders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{api-url}}/my-orders",
+									"host": [
+										"{{api-url}}"
+									],
+									"path": [
+										"my-orders"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -164,7 +181,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "  {\n    \"name\": \"GTA VI\",\n    \"category\": \"Jogos\",\n    \"price\": 999.90,\n    \"stock\": 50\n  }",
+									"raw": "  {\n    \"name\": \"GTA VI\",\n    \"price\": 999.90,\n    \"stock\": 50\n  }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -271,7 +288,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"senhaadmin\"\n}",
+							"raw": "{\n    \"username\": \"joaosilva\",\n    \"password\": \"senhauser\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -302,7 +319,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{api-url}}/search?name=gamer&minPrice=1000&maxPrice=2000",
+							"raw": "{{api-url}}/search?name=gamer&minPrice=1000&maxPrice=2000&category=MOVEIS",
 							"host": [
 								"{{api-url}}"
 							],
@@ -321,6 +338,10 @@
 								{
 									"key": "maxPrice",
 									"value": "2000"
+								},
+								{
+									"key": "category",
+									"value": "MOVEIS"
 								}
 							]
 						}
@@ -446,7 +467,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTc0MzE3ODQ4Nn0.WHEpgM6GlLCSmUTYqFT_hCsxr6r951h-Y3BSNo4x6fI",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2Fvc2lsdmEiLCJleHAiOjE3NDM0MDU4MDJ9.aQCZ2xLbDt_h4eC0vpaNCgpy5iC28NgCa1Ou_sEisnE",
 				"type": "string"
 			}
 		]

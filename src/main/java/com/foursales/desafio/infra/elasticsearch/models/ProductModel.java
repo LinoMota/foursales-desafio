@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.foursales.desafio.domain.entities.Product;
+import com.foursales.desafio.domain.enums.Category;
 import jakarta.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +26,7 @@ public class ProductModel {
     private String name;
 
     @Field(type = FieldType.Keyword)
-    private String category;
+    private Category category;
 
     @Field(type = FieldType.Double)
     private BigDecimal price;
@@ -44,11 +45,12 @@ public class ProductModel {
     @JsonCreator
     public ProductModel(
             @JsonProperty("name") String name,
+            @JsonProperty("category") String category,
             @JsonProperty("price") Double price,
             @JsonProperty("stock") Integer stock) {
         this.name = name;
+        this.category = Category.valueOf(category.toUpperCase());
         this.price = BigDecimal.valueOf(price);
         this.stock = stock;
     }
-
 }

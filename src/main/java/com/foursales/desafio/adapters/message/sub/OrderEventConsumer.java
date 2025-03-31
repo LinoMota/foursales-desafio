@@ -54,13 +54,26 @@ public class OrderEventConsumer {
     public void handleOrderEvent(@Payload OrderEventDTO orderEventDTO) {
         Order order = orderRepository.findById(orderEventDTO.orderId()).orElseThrow(EntityNotFoundException::new);
 
+        boolean hasSufficientStock = order.getItems().stream()
+                .allMatch(item -> {
+                    var product = item.getProduct();
+                    int newStock = product.getStock() - item.getQuantity();
+                    return newStock >= 0;
+                });
+
+        if (!hasSufficientStock) {
+            order.setStatus(OrderStatus.CANCELLED);
+            orderRepository.save(order);
+            return;
+        }
+
         order.setStatus(OrderStatus.PAID);
 
         order.getItems().forEach(item -> {
             var product = item.getProduct();
             var elasticProduct = elasticProductRepository.findById(product.getId()).orElseThrow(EntityNotFoundException::new);
 
-            var newStock = product.getStock() - item.getQuantity();
+            int newStock = product.getStock() - item.getQuantity();
 
             elasticProduct.setStock(newStock);
             product.setStock(newStock);

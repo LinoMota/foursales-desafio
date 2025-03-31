@@ -5,6 +5,9 @@ import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch.core.SearchTemplateResponse;
 import co.elastic.clients.elasticsearch.core.search.Hit;
 import co.elastic.clients.json.JsonData;
+import com.foursales.desafio.domain.enums.Category;
+import com.foursales.desafio.domain.exceptions.InvalidCategoryException;
+import com.foursales.desafio.domain.validations.CategoryValidation;
 import com.foursales.desafio.infra.elasticsearch.models.ProductModel;
 import co.elastic.clients.elasticsearch.core.SearchTemplateRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +25,7 @@ public class ProductSeachService {
     @Autowired
     private ElasticsearchClient elasticsearchClient;
 
-    public List<ProductModel> searchProducts(String name, Double minPrice, Double maxPrice, int from, int size) throws IOException, IOException {
+    public List<ProductModel> searchProducts(String name, String category, Double minPrice, Double maxPrice, int from, int size) throws IOException {
         Map<String, JsonData> params = new HashMap<>();
         params.put("name", JsonData.of(name));
         params.put("min_price", JsonData.of(minPrice));
@@ -30,15 +33,20 @@ public class ProductSeachService {
         params.put("from", JsonData.of(from));
         params.put("size", JsonData.of(size));
 
-        SearchTemplateRequest request = (new SearchTemplateRequest.Builder())
-                .id("search-products")
-                .params(params)
-                .build();
+        if (category != null) {
+            String upperCaseCategory = category.toUpperCase();
+            boolean isCategoryValid = CategoryValidation.isValidCategory(upperCaseCategory);
 
-        SearchTemplateResponse<ProductModel> response = elasticsearchClient.searchTemplate(
-                request,
-                ProductModel.class
-        );
+            if (!isCategoryValid) {
+                throw new InvalidCategoryException(upperCaseCategory);
+            }
+
+            params.put("category", JsonData.of(upperCaseCategory));
+        }
+
+        SearchTemplateRequest request = (new SearchTemplateRequest.Builder()).id("search-products").params(params).build();
+
+        SearchTemplateResponse<ProductModel> response = elasticsearchClient.searchTemplate(request, ProductModel.class);
 
         List<ProductModel> productModels = new ArrayList<>();
 

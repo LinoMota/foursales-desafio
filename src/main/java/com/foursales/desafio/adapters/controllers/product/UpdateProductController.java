@@ -6,6 +6,7 @@ import com.foursales.desafio.domain.usecases.product.GetProductUseCase;
 import com.foursales.desafio.domain.usecases.product.UpdateProductUseCase;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +21,7 @@ public class UpdateProductController {
     private UpdateProductUseCase updateProductUseCase;
 
     @PutMapping("/{id}")
-    public ResponseEntity<ProductDTO> updateProduct(@PathVariable Long id, @RequestBody UpdateProductDTO product) {
+    public ResponseEntity<ProductDTO> updateProduct(@PathVariable Long id, @RequestBody @Valid UpdateProductDTO product) {
         return ResponseEntity.ok(updateProductUseCase.execute(id, product));
     }
 

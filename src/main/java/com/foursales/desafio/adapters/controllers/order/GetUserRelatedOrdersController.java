@@ -1,6 +1,8 @@
 package com.foursales.desafio.adapters.controllers.order;
 
+import com.foursales.desafio.adapters.controllers.dtos.order.OrderDTO;
 import com.foursales.desafio.adapters.message.dtos.PaymentInfoResponseDTO;
+import com.foursales.desafio.domain.usecases.order.GetUserRelatedOrdersUseCase;
 import com.foursales.desafio.domain.usecases.order.PayOrderUseCase;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -9,19 +11,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/pay-order")
+@RequestMapping("/my-orders")
 @Tag(name = "Orders")
 @SecurityRequirement(name = "bearer-key")
-public class PayOrderController {
+public class GetUserRelatedOrdersController {
 
     @Autowired
-    private PayOrderUseCase payOrderUsecase;
+    private GetUserRelatedOrdersUseCase getUserRelatedOrdersUseCase;
 
-    @PostMapping("/{id}")
-    public ResponseEntity<PaymentInfoResponseDTO> createOrder(@PathVariable("id") Long orderId, Authentication authentication) {
+    @GetMapping
+    public ResponseEntity<List<OrderDTO>> createOrder(Authentication authentication) {
         String username = authentication.getPrincipal().toString();
-        PaymentInfoResponseDTO response = this.payOrderUsecase.execute(orderId, username);
+        List<OrderDTO> response = this.getUserRelatedOrdersUseCase.execute(username);
         return ResponseEntity.ok().body(response);
     }
 }

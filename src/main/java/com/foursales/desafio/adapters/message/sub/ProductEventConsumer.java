@@ -1,7 +1,9 @@
 package com.foursales.desafio.adapters.message.sub;
 
 import com.foursales.desafio.adapters.message.dtos.ProductEventDTO;
+import com.foursales.desafio.domain.entities.Order;
 import com.foursales.desafio.domain.entities.Product;
+import com.foursales.desafio.infra.database.repositories.OrderRepository;
 import com.foursales.desafio.infra.database.repositories.ProductRepository;
 import com.foursales.desafio.infra.elasticsearch.models.ProductModel;
 import com.foursales.desafio.infra.elasticsearch.repositories.ElasticProductRepository;
@@ -11,6 +13,8 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class ProductEventConsumer {
 
@@ -19,6 +23,9 @@ public class ProductEventConsumer {
 
     @Autowired
     private ElasticProductRepository elasticProductRepository;
+
+    @Autowired
+    private OrderRepository orderRepository;
 
     @KafkaListener(topics = "${kafka-topics.created-product}", groupId = "product-group")
     @Transactional
@@ -32,12 +39,16 @@ public class ProductEventConsumer {
 
     @KafkaListener(topics = "${kafka-topics.updated-product}", groupId = "product-group")
     @Transactional
-    public void handleProductUpdated(@Payload  ProductEventDTO productEventDTO) {
+    public void handleProductUpdated(@Payload ProductEventDTO productEventDTO) {
         System.out.println("Received product updated event: " + productEventDTO.productId());
 
         Product product = productRepository.findById(productEventDTO.productId()).orElseThrow(() -> new RuntimeException("Product not found"));
 
         ProductModel productModel = elasticProductRepository.findById(productEventDTO.productId()).orElseThrow(() -> new RuntimeException("Product not found"));
+
+        List<Order> ordersRelatedToProductId = orderRepository.findOrdersByProductId(productEventDTO.productId());
+
+        ordersRelatedToProductId.forEach(Order::calculateFinalPrice);
 
         productModel.setStock(product.getStock());
         productModel.setPrice(product.getPrice());

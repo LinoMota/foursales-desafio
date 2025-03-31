@@ -19,7 +19,7 @@ public class ProductEventPublisher {
     private String updatedProductTopic;
 
     public void publishProductCreated(@Payload Long productId) {
-        kafkaTemplate.send(createdProductTopic,  productId);
+        kafkaTemplate.send(createdProductTopic, productId);
     }
 
     public void publishProductUpdated(@Payload Long productId) {

@@ -1,5 +1,6 @@
 package com.foursales.desafio.domain.entities;
 
+import com.foursales.desafio.domain.enums.Category;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,8 +24,9 @@ public class Product {
     @Column(nullable = false)
     private String name;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String category;
+    private Category category;
 
     @Column(nullable = false)
     private BigDecimal price;
@@ -33,4 +35,3 @@ public class Product {
     private Integer stock;
 
 }
-

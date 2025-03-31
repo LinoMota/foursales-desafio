@@ -1,6 +1,7 @@
 package com.foursales.desafio.adapters.controllers.dtos.product;
 
 import com.foursales.desafio.domain.entities.Product;
+import com.foursales.desafio.domain.enums.Category;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -14,8 +15,8 @@ public record ProductDTO(
         @NotBlank()
         String name,
 
-        @NotBlank()
-        String category,
+        @NotNull()
+        Category category,
 
         @NotNull()
         BigDecimal price,

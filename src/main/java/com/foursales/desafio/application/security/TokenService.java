@@ -19,28 +19,12 @@ public class TokenService {
 
     public String generateToken(User user) {
         Algorithm algorithm = Algorithm.HMAC256(secret);
-        try {
-            return JWT.create()
-                    .withSubject(user.getUsername())
-                    .withExpiresAt(getExpireDate())
-                    .sign(algorithm);
-        } catch (JWTCreationException exception){
-            throw new RuntimeException("Could not generate the JWT Token", exception);
-        }
+        return JWT.create().withSubject(user.getUsername()).withExpiresAt(getExpireDate()).sign(algorithm);
     }
 
     public String getSubject(String tokenJWT) {
         Algorithm algorithm = Algorithm.HMAC256(secret);
-        try {
-            return JWT.require(
-                    algorithm
-                    )
-                    .build()
-                    .verify(tokenJWT)
-                    .getSubject();
-        } catch (JWTVerificationException exception) {
-            throw new RuntimeException("JWT Token invalid or expired!");
-        }
+        return JWT.require(algorithm).build().verify(tokenJWT).getSubject();
     }
 
     private Instant getExpireDate() {

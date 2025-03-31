@@ -1,122 +1,302 @@
 [
   {
-    "name": "Monitor Gamer Acer Predator 27",
-    "category": "Periféricos",
-    "price": 2899.99,
+    "name": "Monitor LG Ultragear 27",
+    "category": "PERIFERICOS",
+    "price": 2299.99,
+    "stock": 25
+  },
+  {
+    "name": "Teclado Mecânico Corsair K95",
+    "category": "PERIFERICOS",
+    "price": 1399.99,
+    "stock": 40
+  },
+  {
+    "name": "Mouse Razer DeathAdder V2",
+    "category": "PERIFERICOS",
+    "price": 599.99,
+    "stock": 100
+  },
+  {
+    "name": "Headset Logitech G Pro X",
+    "category": "AUDIO",
+    "price": 799.99,
+    "stock": 60
+  },
+  {
+    "name": "Cadeira Gamer Noblechairs Hero",
+    "category": "MOVEIS",
+    "price": 2499.99,
+    "stock": 20
+  },
+  {
+    "name": "Controle DualSense PS5",
+    "category": "PERIFERICOS",
+    "price": 499.99,
+    "stock": 80
+  },
+  {
+    "name": "Laptop Dell Alienware m15",
+    "category": "INFORMATICA",
+    "price": 15999.99,
     "stock": 15
   },
   {
-    "name": "Teclado Mecânico Razer BlackWidow",
-    "category": "Periféricos",
+    "name": "Gamepad Razer Wolverine V2",
+    "category": "PERIFERICOS",
     "price": 799.99,
     "stock": 50
   },
   {
-    "name": "Mouse Gamer Logitech G502",
-    "category": "Periféricos",
-    "price": 299.99,
-    "stock": 120
+    "name": "Cadeira Gamer AKRacing",
+    "category": "MOVEIS",
+    "price": 1999.99,
+    "stock": 30
   },
   {
-    "name": "Headset Gamer HyperX Cloud II",
-    "category": "Áudio",
-    "price": 599.99,
-    "stock": 40
-  },
-  {
-    "name": "Cadeira Gamer DXRacer Formula Series",
-    "category": "Móveis",
-    "price": 1699.99,
-    "stock": 25
-  },
-  {
-    "name": "Controle Xbox Elite Series 2",
-    "category": "Periféricos",
-    "price": 1099.99,
-    "stock": 60
-  },
-  {
-    "name": "Laptop Gamer ASUS ROG Strix G15",
-    "category": "Informática",
-    "price": 12999.99,
-    "stock": 20
-  },
-  {
-    "name": "Gamepad Logitech F310",
-    "category": "Periféricos",
-    "price": 199.99,
-    "stock": 150
-  },
-  {
-    "name": "Cadeira Gamer Secretlab Titan",
-    "category": "Móveis",
-    "price": 3999.99,
+    "name": "Placa de Vídeo AMD Radeon RX 6900 XT",
+    "category": "INFORMATICA",
+    "price": 14999.99,
     "stock": 10
   },
   {
-    "name": "Placa de Vídeo NVIDIA GeForce RTX 3080",
-    "category": "Informática",
-    "price": 7999.99,
+    "name": "Smartphone iPhone 13 Pro",
+    "category": "ELETRONICOS",
+    "price": 8999.99,
     "stock": 30
   },
   {
-    "name": "Smartphone Galaxy S23",
-    "category": "Eletrônicos",
-    "price": 4999.99,
-    "stock": 50
-  },
-  {
-    "name": "Notebook Dell XPS 15",
-    "category": "Informática",
-    "price": 10999.99,
-    "stock": 30
-  },
-  {
-    "name": "Fone de Ouvido Bluetooth Sony",
-    "category": "Áudio",
-    "price": 899.99,
-    "stock": 100
-  },
-  {
-    "name": "Cadeira Gamer RGB",
-    "category": "Móveis",
-    "price": 1299.99,
-    "stock": 20
-  },
-  {
-    "name": "Teclado Mecânico Redragon",
-    "category": "Periféricos",
-    "price": 349.99,
-    "stock": 80
-  },
-  {
-    "name": "Tênis Nike Air Max",
-    "category": "Moda",
-    "price": 599.99,
-    "stock": 200
-  },
-  {
-    "name": "Geladeira Frost Free Brastemp",
-    "category": "Eletrodomésticos",
-    "price": 3499.99,
-    "stock": 15
-  },
-  {
-    "name": "Livro Clean Code - Robert C. Martin",
-    "category": "Livros",
-    "price": 89.90,
-    "stock": 500
-  },
-  {
-    "name": "Relógio Smartwatch Apple Watch",
-    "category": "Acessórios",
-    "price": 3999.99,
+    "name": "Notebook Lenovo Legion 5",
+    "category": "INFORMATICA",
+    "price": 8499.99,
     "stock": 40
   },
   {
-    "name": "Console PlayStation 5",
-    "category": "Games",
+    "name": "Fone de Ouvido Bose QuietComfort 35",
+    "category": "AUDIO",
+    "price": 1299.99,
+    "stock": 50
+  },
+  {
+    "name": "Cadeira Gamer SecretLab Omega",
+    "category": "MOVEIS",
+    "price": 3299.99,
+    "stock": 10
+  },
+  {
+    "name": "Teclado Mecânico Logitech G413",
+    "category": "PERIFERICOS",
+    "price": 699.99,
+    "stock": 75
+  },
+  {
+    "name": "Tênis Adidas Ultraboost",
+    "category": "MODA",
+    "price": 799.99,
+    "stock": 150
+  },
+  {
+    "name": "Geladeira Samsung Frost Free",
+    "category": "ELETRODOMESTICOS",
     "price": 4599.99,
+    "stock": 10
+  },
+  {
+    "name": "Livro O Código Limpo",
+    "category": "LIVROS",
+    "price": 59.90,
+    "stock": 450
+  },
+  {
+    "name": "Relógio Garmin Forerunner 945",
+    "category": "ACESSORIOS",
+    "price": 2499.99,
+    "stock": 30
+  },
+  {
+    "name": "Console Xbox Series X",
+    "category": "GAMES",
+    "price": 4999.99,
+    "stock": 20
+  },
+  {
+    "name": "Monitor Samsung Odyssey G7",
+    "category": "PERIFERICOS",
+    "price": 3599.99,
+    "stock": 35
+  },
+  {
+    "name": "Teclado Mecânico HyperX Alloy FPS",
+    "category": "PERIFERICOS",
+    "price": 459.99,
+    "stock": 120
+  },
+  {
+    "name": "Mouse Logitech G Pro Wireless",
+    "category": "PERIFERICOS",
+    "price": 799.99,
+    "stock": 85
+  },
+  {
+    "name": "Fone de Ouvido Sony WH-1000XM4",
+    "category": "AUDIO",
+    "price": 1999.99,
     "stock": 25
+  },
+  {
+    "name": "Cadeira Gamer DXRacer Racing",
+    "category": "MOVEIS",
+    "price": 2499.99,
+    "stock": 15
+  },
+  {
+    "name": "Controle Nintendo Switch Pro",
+    "category": "PERIFERICOS",
+    "price": 399.99,
+    "stock": 60
+  },
+  {
+    "name": "Laptop Apple MacBook Pro 16",
+    "category": "INFORMATICA",
+    "price": 18999.99,
+    "stock": 12
+  },
+  {
+    "name": "Gamepad Xbox Elite Series 2",
+    "category": "PERIFERICOS",
+    "price": 1099.99,
+    "stock": 55
+  },
+  {
+    "name": "Cadeira Gamer Noblechairs ICON",
+    "category": "MOVEIS",
+    "price": 2999.99,
+    "stock": 25
+  },
+  {
+    "name": "Placa de Vídeo ASUS ROG Strix RTX 3070",
+    "category": "INFORMATICA",
+    "price": 7999.99,
+    "stock": 20
+  },
+  {
+    "name": "Smartphone OnePlus 9 Pro",
+    "category": "ELETRONICOS",
+    "price": 6999.99,
+    "stock": 45
+  },
+  {
+    "name": "Notebook Acer Predator Helios",
+    "category": "INFORMATICA",
+    "price": 9999.99,
+    "stock": 18
+  },
+  {
+    "name": "Fone de Ouvido Jabra Elite 85h",
+    "category": "AUDIO",
+    "price": 1199.99,
+    "stock": 40
+  },
+  {
+    "name": "Cadeira Gamer Playseat Evolution",
+    "category": "MOVEIS",
+    "price": 5999.99,
+    "stock": 7
+  },
+  {
+    "name": "Teclado Mecânico Razer Huntsman Elite",
+    "category": "PERIFERICOS",
+    "price": 1299.99,
+    "stock": 60
+  },
+  {
+    "name": "Tênis Puma RS-X",
+    "category": "MODA",
+    "price": 699.99,
+    "stock": 150
+  },
+  {
+    "name": "Geladeira Electrolux Frost Free",
+    "category": "ELETRODOMESTICOS",
+    "price": 4599.99,
+    "stock": 10
+  },
+  {
+    "name": "Livro A Arte de Programar Computadores",
+    "category": "LIVROS",
+    "price": 79.90,
+    "stock": 300
+  },
+  {
+    "name": "Relógio Fossil Hybrid HR",
+    "category": "ACESSORIOS",
+    "price": 899.99,
+    "stock": 30
+  },
+  {
+    "name": "Console Nintendo Switch",
+    "category": "GAMES",
+    "price": 2999.99,
+    "stock": 25
+  },
+  {
+    "name": "Monitor BenQ Zowie XL2546",
+    "category": "PERIFERICOS",
+    "price": 2799.99,
+    "stock": 30
+  },
+  {
+    "name": "Teclado Mecânico SteelSeries Apex Pro",
+    "category": "PERIFERICOS",
+    "price": 1799.99,
+    "stock": 50
+  },
+  {
+    "name": "Mouse Corsair Dark Core RGB",
+    "category": "PERIFERICOS",
+    "price": 449.99,
+    "stock": 90
+  },
+  {
+    "name": "Fone de Ouvido JBL Quantum 800",
+    "category": "AUDIO",
+    "price": 999.99,
+    "stock": 50
+  },
+  {
+    "name": "Cadeira Gamer Respawn 110",
+    "category": "MOVEIS",
+    "price": 1299.99,
+    "stock": 40
+  },
+  {
+    "name": "Controle PS4 DualShock 4",
+    "category": "PERIFERICOS",
+    "price": 299.99,
+    "stock": 80
+  },
+  {
+    "name": "Laptop MSI GE66 Raider",
+    "category": "INFORMATICA",
+    "price": 15999.99,
+    "stock": 8
+  },
+  {
+    "name": "Gamepad PDP Afterglow",
+    "category": "PERIFERICOS",
+    "price": 199.99,
+    "stock": 100
+  },
+  {
+    "name": "Cadeira Gamer GT Omega Racing",
+    "category": "MOVEIS",
+    "price": 1899.99,
+    "stock": 15
+  },
+  {
+    "name": "Placa de Vídeo MSI GeForce GTX 1660",
+    "category": "INFORMATICA",
+    "price": 2499.99,
+    "stock": 35
   }
 ]
